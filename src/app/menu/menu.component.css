@@ -1,0 +1,33 @@
+/* header */
+header .barre {
+  background-color: rgb(10, 0, 34);
+}
+
+.barre li {
+  list-style: none;
+}
+
+header img {
+  width: 14%;
+  height: 14%;
+}
+
+header nav ul li {
+  display: inline-block;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.364), rgba(0, 0, 0, 0.35)),
+    url("/assets/img/bannierHeader.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+}
+
+header h1 {
+  margin-top: 80px;
+  font-weight: bold;
+}
+/* fin header */

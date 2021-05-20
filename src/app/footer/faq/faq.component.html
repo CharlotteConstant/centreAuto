@@ -1,0 +1,59 @@
+<h2 class="text-center text-white display-3">Foire aux questions</h2>
+<section class="container">
+  <h3 class="text-center my-5">Aide - FAQ</h3>
+  <p>Retrouvez dans cette rubrique toutes les questions que l'on nous pose fréquemment. Si vous ne trouvez pas la
+    réponse à votre question, n'hésitez pas à nous contacter!</p>
+  <h4 class="text-center">Questions fréquentes:</h4>
+
+  <ngb-accordion>
+    <ngb-panel title="Es-ce que les garages partenaires respectent une charte de qualité?">
+      <ng-template ngbPanelContent>
+        En effet, nous travaillons avec des professionnels qui s'engagent à respecter la charte de qualité Centre Auto
+        CCAS.
+        Tous les véhicules mises en vente sont contrôlés en atelier mécanique et carrosserie, plus de 120 points sont
+        contrôlés.
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel title="Quels sont les garanties si le véhicule acheté ne correspond pas à mes attentes?">
+      <ng-template ngbPanelContent>
+        Nous appliquons la garantie 100% satisfait ou remboursé!
+        Vous avez 10 jours suivant la livraison et dans la limite de 1000 km parcourus pour vous rendre compte que ce
+        véhicule ne correspond pas à vos attentes.
+        La voiture doit être dans son état d'origine et ne pas avoir subie de dommage.Pour plus de précisions, consultez
+        nos conditions générales de ventes.
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel title="Qu'est-ce que le certificat de qualité 'Crit'air'?">
+      <ng-template ngbPanelContent>
+        Le certificat Crit'air classe les voitures en fonction de leur niveau d'émissions de polluants atmosphériques.
+        Cette classification prend en compte la norme antipollution et la motorisation du véhicule.
+        Il existe 6 classes, le niveau 0 étant réservé aux véhicules électriques.
+        Le simulateur officiel est disponible à cette adresse : <a
+          href="https://www.certificat-air.gouv.fr">https://www.certificat-air.gouv.fr</a>
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel title="Quel est le coût d'une carte grise?">
+      <ng-template ngbPanelContent>
+        La carte grise est payante, c'est une taxe qui est reversée aux régions.
+        elle dépend de la puissance fiscale du véhicule ains que de la taxe par cheval fiscal fixée par la région de
+        votre domicile (de 27€ à 52€ par cheval). Les véhicules électriques ou à très faible émission bénéficient d'une
+        exonération.
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel title="Le gravage des vitres est-il obligatoire?">
+      <ng-template ngbPanelContent>
+        Le gravage des vitres n'est pas obligatoire, cependant il est recommandé puisque il représente une sécurité
+        supplémentaire contre le vol.
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
+  <div class="text-center my-5">
+    <button type="submit" class="button-red"><a [routerLink]="['/home']" class="text-white">Trouver la
+        voiture
+        de mes
+        rêves</a>
+      <i class="fas fa-angle-double-right px-3"></i>
+
+    </button>
+  </div>
+</section>

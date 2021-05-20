@@ -1,0 +1,56 @@
+/* Début section form */
+
+#form {
+  background-color: rgb(10, 0, 34);
+  z-index: 1;
+  padding: 40px;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+#form ul li select {
+  border-radius: 20px;
+  width: 200px;
+}
+
+#form ul {
+  list-style: none;
+}
+
+::ng-deep .custom-slider .ngx-slider .ngx-slider-bar {
+  background: white;
+  height: 10px;
+}
+
+::ng-deep .custom-slider .ngx-slider .ngx-slider-selection {
+  background: #ad0808;
+}
+
+::ng-deep .custom-slider .ngx-slider .ngx-slider-pointer {
+  width: 20px;
+  height: 20px;
+  top: auto; /* to remove the default positioning */
+  bottom: -10px;
+  background-color: #ad0808;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+::ng-deep .custom-slider .ngx-slider .ngx-slider-pointer:after {
+  display: none;
+}
+
+::ng-deep .custom-slider .ngx-slider .ngx-slider-bubble {
+  bottom: 14px;
+  color: white;
+}
+
+::ng-deep
+  span.ngx-slider-span.ngx-slider-bubble.ngx-slider-limit.ngx-slider-floor,
+::ng-deep
+  span.ngx-slider-span.ngx-slider-bubble.ngx-slider-limit.ngx-slider-ceil {
+  color: #ad0808;
+  font-weight: bold;
+}
+
+/* fin section form */

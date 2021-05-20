@@ -1,0 +1,29 @@
+/* footer */
+footer h3 {
+  color: rgb(10, 0, 34);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+footer i {
+  color: rgb(173, 8, 8);
+}
+
+footer #lien {
+  background-color: rgb(10, 0, 34);
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li a {
+  color: white;
+}
+
+aside ul {
+  padding-inline-start: 0;
+}
+/* fin du footer */

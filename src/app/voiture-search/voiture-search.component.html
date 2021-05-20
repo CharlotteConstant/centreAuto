@@ -1,0 +1,72 @@
+<!-- Début section form -->
+<section id="form" class="container">
+  <form class="row" [formGroup]="voitureform">
+    <h2 class="pb-4 col-md-8 offset-md-2 text-white text-center">Recherche par critères :</h2>
+    <ul class=" row text-center">
+
+      <li class="col-md-4 p-4">
+        <select formControlName="marque">
+          <option value="">--Marque--</option>
+          <option value="1">Audi</option>
+          <option value="2">BMW</option>
+          <option value="3">Mercedes</option>
+        </select>
+      </li>
+      <li class="col-md-4 p-4">
+        <select formControlName="modele" id="modele-select">
+          <option value="">--Modèle--</option>
+          <option value="1"></option>
+          <option value="2"></option>
+          <option value="3"></option>
+        </select>
+      </li>
+      <li class="col-md-4 p-4">
+        <select formControlName="carburant" id="carburant-select">
+          <option value="">--Carburant--</option>
+          <option value="1">Diesel</option>
+          <option value="2">Essence</option>
+          <option value="3">GPL</option>
+        </select>
+      </li>
+      <li class="col-md-4 p-4">
+        <label for="annee" class="form-label text-white">Année : </label>
+        <div class="custom-slider">
+          <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ngx-slider>
+        </div>
+      </li>
+      <li class="col-md-4 p-4">
+        <label for="kilometres" class="form-label text-white">Kilomètres : </label>
+        <div class="custom-slider">
+          <ngx-slider [(value)]="minValue2" [(highValue)]="maxValue2" [options]="options2"></ngx-slider>
+        </div>
+      </li>
+      <li class="col-md-4 p-4">
+        <label for="prix" class="form-label text-white">Prix : </label>
+        <div class="custom-slider">
+          <ngx-slider [(value)]="minValue3" [(highValue)]="maxValue3" [options]="options3"></ngx-slider>
+        </div>
+      </li>
+      <!--
+      <li class="col-md-4 p-4">
+        <label for="customRange2" class="form-label text-white">Année : </label>
+        <input type="range" class="form-range" min="1990" max="2021" id="customRange2">
+      </li>-->
+      <!--
+      <li class="col-md-4 p-4">
+        <label for="customRange2" class="form-label text-white">Kilomètres :</label>
+        <input type="range" class="form-range" min="1990" max="2021" id="customRange2">
+      </li>
+      <li class="col-md-4 p-4">
+        <label for="customRange2" class="form-label text-white">Prix :</label>
+        <input type="range" class="form-range" min="1990" max="2021" id="customRange2">
+      </li>-->
+      <li class="col-md-12 pt-5 d-flex justify-content-center">
+        <button type="submit" value="Rechercher" class="button-red"><a class="text-white"
+            [routerLink]="['/voiture']">Rechercher
+          </a><i class="fas fa-angle-double-right px-3"></i>
+        </button>
+      </li>
+    </ul>
+  </form>
+</section>
+<!-- fin section form -->
