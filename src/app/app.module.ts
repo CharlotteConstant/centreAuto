@@ -17,6 +17,7 @@ import { ConditionsGeneralesVenteComponent } from './footer/conditions-generales
 import { PolitiqueConfidentialiteComponent } from './footer/politique-confidentialite/politique-confidentialite.component';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { VoitureDetailComponent } from './voiture-detail/voiture-detail.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { VoitureDetailComponent } from './voiture-detail/voiture-detail.componen
     ConditionsGeneralesVenteComponent,
     PolitiqueConfidentialiteComponent,
     VoitureDetailComponent,
+    LoginComponent,
 
   ],
   imports: [

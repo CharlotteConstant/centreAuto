@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { VoitureService } from '../voiture.service';
 
 @Component({
   selector: 'app-voiture-detail',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VoitureDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private voitureService: VoitureService, private router: Router) { }
 
   ngOnInit(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+
   }
 
 }

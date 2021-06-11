@@ -1,4 +1,7 @@
 /* Début section form */
+li button {
+  border: 1px solid white;
+}
 
 #form {
   background-color: rgb(10, 0, 34);

@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import { VoitureService } from '../voiture.service';
+import { Voiture } from '../model/voiture.model';
 
 
 @Component({
@@ -12,6 +14,7 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
 })
 export class VoitureSearchComponent implements OnInit {
 voitureform !: FormGroup;
+
 minValue: number = 1950;
 maxValue: number = 2021;
 options: Options = {
@@ -36,7 +39,7 @@ options3: Options = {
     step: 10000
   };
 
-constructor(private fb: FormBuilder, private router: Router) { }
+constructor(private fb: FormBuilder, private router: Router, private voitureService: VoitureService) { }
 
   ngOnInit(): void {
     this.voitureform = this.fb.group({
@@ -44,6 +47,7 @@ constructor(private fb: FormBuilder, private router: Router) { }
       modele: [''],
       carburant: [''],
     })
+
   }
 
 }

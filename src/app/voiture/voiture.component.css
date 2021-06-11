@@ -1,3 +1,31 @@
 h2 {
   margin-top: 20px;
 }
+
+/* Début section ajout */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+section ul li img {
+  width: 100%;
+  object-fit: cover;
+}
+
+section ul li span {
+  border: 1px dashed rgb(10, 0, 34);
+  border-radius: 30px;
+  color: rgb(10, 0, 34);
+  font-weight: bold;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+.cards {
+  min-height: 380px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+/* fin section ajout */
