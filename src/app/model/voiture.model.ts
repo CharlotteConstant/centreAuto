@@ -1,3 +1,13 @@
-export class Voiture{
-  constructor(public id: number,public titre: string, public marque:string, public modele: string, public descriptionC:string, public description: string, public img: string[], public prix: number, public anneeCirculation: number, public km: number, public carburant: string, public ref: string){}
+export interface Voiture{
+  id: number;
+  title: string;
+  kilometers: number;
+  brand: string;
+  model: string;
+  description: string;
+  price: number;
+  year: number;
+  photos: any;
+  fuel: any;
+  ref: string;
 }

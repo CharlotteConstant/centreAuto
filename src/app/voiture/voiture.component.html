@@ -1,15 +1,15 @@
 <section class="container">
   <div class="cards rounded p-4 mb-5">
-    <h3 class="pb-4">{{voit.titre}}</h3>
+    <h3 class="pb-4">{{voit.title}}</h3>
     <ul class="row">
-      <li class="col-6"><img src="{{voit.img[0]}}"></li>
+      <li class="col-6"><img src="{{voit.photos[0].path}}"></li>
       <li class="col-6">
-        <p class="row">{{voit.descriptionC}} <span
-            class="fw-bold col-6 text-center align-self-center mt-4 mb-4">{{voit.prix}} €</span></p>
+        <p class="row">{{voit.description}} <span
+            class="fw-bold col-6 text-center align-self-center mt-4 mb-4">{{voit.price}} €</span></p>
       </li>
     </ul>
     <div class="d-flex align-items-center justify-content-end">
-      <button type="submit" value="more" class="button"><a class="text-white" [routerLink]="['/voiture', voit.id]">En
+      <button value="more" class="button"><a class="text-white" [routerLink]="['/voiture', voit.id]">En
           savoir plus</a>
         <i class="fas fa-angle-double-right px-3"></i>
       </button>

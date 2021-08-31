@@ -10,16 +10,16 @@ import { VoitureDetailComponent } from './voiture-detail/voiture-detail.componen
 import { VoitureListComponent } from './voiture-list/voiture-list.component';
 
 const routes: Routes = [
-  {path: 'home', component:VoitureListComponent},
-  {path: 'voiture', component:VoitureListComponent},
-  {path: 'voiture/:id', component:VoitureDetailComponent},
-  {path: 'login', component:LoginComponent},
-  {path:'faq', component:FaqComponent},
-  {path:'mentionsLegales', component:MentionsLegalesComponent},
-  {path:'conditionsGeneralesVentes', component:ConditionsGeneralesVenteComponent},
-  {path:'politiqueConfidentialite', component:PolitiqueConfidentialiteComponent},
-   {path:'', redirectTo: 'home', pathMatch: 'full'},
-  {path:'**', component:PageNotFoundComponent}
+  {path: 'home', component: VoitureListComponent},
+  {path: 'voiture', component: VoitureListComponent},
+  {path: 'voiture/:id', component: VoitureDetailComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'faq', component: FaqComponent},
+  {path: 'mentionsLegales', component: MentionsLegalesComponent},
+  {path: 'conditionsGeneralesVentes', component: ConditionsGeneralesVenteComponent},
+  {path: 'politiqueConfidentialite', component: PolitiqueConfidentialiteComponent},
+   {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({
