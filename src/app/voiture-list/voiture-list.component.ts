@@ -10,12 +10,13 @@ import {HttpClient} from '@angular/common/http';
 })
 export class VoitureListComponent implements OnInit {
 voitures: Voiture[] = [];
-
+p = 1;
 
   constructor(private voitureService: VoitureService) { }
 
   ngOnInit(): void {
-       this.voitureService.findAll().subscribe(data => this.voitures = data);
+       this.voitureService.findAll().subscribe(data => {this.voitures = data;
+       });
   }
 
 }

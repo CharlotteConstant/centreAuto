@@ -1,0 +1,26 @@
+#annonce article h2 {
+  border-bottom: 1px solid rgb(173, 8, 8);
+}
+
+#annonce .bloc {
+  position: relative;
+}
+
+#annonce article h3::after {
+  content: "";
+  display: "block";
+  width: 1px;
+  height: 120px;
+  background-color: black;
+  position: absolute;
+  top: 30%;
+  left: 45%;
+}
+
+#annonce .carousel {
+  width: 80%;
+  margin-left: 40px;
+  margin-top: 40px;
+}
+
+

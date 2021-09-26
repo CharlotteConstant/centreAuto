@@ -18,6 +18,15 @@ import { PolitiqueConfidentialiteComponent } from './footer/politique-confidenti
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { VoitureDetailComponent } from './voiture-detail/voiture-detail.component';
 import { LoginComponent } from './login/login.component';
+import { VoitureAddComponent } from './voiture-add/voiture-add.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
+import { ContactComponent } from './contact/contact.component';
+import { MyActivityComponent } from './my-activity/my-activity.component';
+import { ProfileManageMyaccountComponent } from './profile-manage-myaccount/profile-manage-myaccount.component';
+import { ProfileManageMyadComponent } from './profile-manage-myad/profile-manage-myad.component';
+import { ProfileManageMygarageComponent } from './profile-manage-mygarage/profile-manage-mygarage.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { GarageAddComponent } from './garage-add/garage-add.component';
 
 @NgModule({
   declarations: [
@@ -32,17 +41,26 @@ import { LoginComponent } from './login/login.component';
     PolitiqueConfidentialiteComponent,
     VoitureDetailComponent,
     LoginComponent,
+    VoitureAddComponent,
+    MyProfileComponent,
+    ContactComponent,
+    MyActivityComponent,
+    ProfileManageMyaccountComponent,
+    ProfileManageMyadComponent,
+    ProfileManageMygarageComponent,
+    GarageAddComponent,
 
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    NgxSliderModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NgbModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule,
+        NgxSliderModule,
+        NgxPaginationModule
+    ],
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

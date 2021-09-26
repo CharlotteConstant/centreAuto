@@ -1,0 +1,23 @@
+<div class="container">
+  <h1 class="text-center mt-3 mb-5">Bienvenue sur ton profil</h1>
+
+<p>Dans cet espace, tu peux gérer ton compte et tes infos personnelles, voir tes annonces et tes garages.</p>
+  <div class="row justify-content-around my-5">
+
+    <button class="text-center col-md-3 p-4" [routerLink]="['/myprofile/account']">
+      <p class="title-card-user">Gérer mon compte</p>
+      <i class="fa-4x fas fa-user-cog mt-3"></i>
+    </button>
+
+    <button class="text-center col-md-3" [routerLink]="['/myprofile/ads']">
+      <p class="title-card-user">Gérer mes annonces</p>
+      <i class="fa-4x far fa-newspaper mt-3"></i>
+    </button>
+
+    <button class="button text-center col-md-3" [routerLink]="['/myprofile/garages']">
+      <p class="title-card-user">Gérer mes garages</p>
+      <i class="fa-4x fas fa-warehouse mt-3"></i>
+    </button>
+
+</div>
+</div>

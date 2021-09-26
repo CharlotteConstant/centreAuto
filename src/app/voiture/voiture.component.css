@@ -13,18 +13,48 @@ section ul li img {
 }
 
 section ul li span {
-  border: 1px dashed rgb(10, 0, 34);
-  border-radius: 30px;
+
+border-style: outset;
   color: rgb(10, 0, 34);
   font-weight: bold;
+
 }
 
 h3 {
   font-weight: bold;
 }
 
-.cards {
-  min-height: 380px;
+.button {
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.button a {
+cursor: pointer;
+display: inline-block;
+position: relative;
+transition: 0.5s;
+}
+
+.button a:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover a {
+  padding-right: 25px;
+}
+
+.button:hover a:after {
+  opacity: 1;
+  right: 0;
+}
+
+.cards:hover {
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }

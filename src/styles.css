@@ -19,3 +19,20 @@ button,
   border: none;
   padding: 8px 10px;
 }
+
+/* title emplacement */
+
+.titleAd{
+
+  display: inline-block;
+  background-color: white;
+
+}
+
+.title{
+  display: block;
+  text-align: center;
+  margin-top: -20px;
+  margin-bottom: 80px;
+}
+/* fin title emplacement */

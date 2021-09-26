@@ -1,9 +1,80 @@
 
 <section class="container">
-  <h1>Détail voiture</h1>
-  <p>{{voit.title}}</p>
-  <p>{{voit.description}}</p>
-  <!--<p>{{voiture.model.name}}</p>-->
+  <!-- Début section navt -->
+  <section id="navt">
+    <div class="p-5 fw-bold">
+      <a href="#">Accueil ></a>
+      <a class="text-decoration-underline" href="">Annonce détaillée</a>
+    </div>
+  </section>
+  <!-- Fin section navt -->
+
+
+  <!-- Début section annonce -->
+
+  <section id="annonce">
+    <div class="d-flex">
+      <aside class="container">
+        <ngb-carousel>
+          <ng-template ngbSlide>
+            <div class="picsum-img-wrapper">
+              <img src="{{voit.photos[0].path}}" class="d-block w-100" alt="Random first slide">
+            </div>
+          </ng-template>
+          <ng-template ngbSlide>
+            <div class="picsum-img-wrapper">
+              <img src="{{voit.photos[1].path}}" class="d-block w-100" alt="Random second slide">
+            </div>
+          </ng-template>
+          <ng-template ngbSlide>
+            <div class="picsum-img-wrapper">
+              <img src="{{voit.photos[2].path}}" class="d-block w-100" alt="Random second slide">
+            </div>
+          </ng-template>
+        </ngb-carousel>
+
+      </aside>
+      <article class="container">
+        <h2 class="text-center fw-bold pb-3">{{voit.title}}</h2>
+        <div class="bloc border mt-5">
+          <h3 class="pb-5 pt-1 ps-3 fw-bold">Fiche technique</h3>
+          <ul class="row">
+            <li class="col-6 ps-5">
+              <p>Modèle: {{voit.model.name}}</p>
+            </li>
+            <li class="col-6 ps-5">
+              <p>Marque: {{voit.model.brand.name}}</p>
+            </li>
+            <li class="col-6 ps-5">
+              <p>Energie: {{voit.fuel.name}}</p>
+            </li>
+            <li class="col-6 ps-5">
+              <p>Année: {{voit.year | date: 'YYYY'}}</p>
+            </li>
+
+            <li class="col-6 ps-5">
+              <p>Kilométrage: {{voit.kilometers}} km</p>
+            </li>
+
+          </ul>
+          <div class="text-center">
+            <i class="fab fa-bluetooth-b fas-3 px-3"></i>
+            <i class="fas fa-map-marked-alt px-3"></i>
+            <i class="fas fa-video px-3"></i>
+          </div>
+
+        </div>
+        <h3 class="py-3">Informations complémentaires: </h3>
+        <p>{{voit.description}}</p>
+
+
+        <h4 class="border border-4 rounded py-2 text-center">Prix: {{voit.price}} €</h4>
+
+        <p>Référence de l'annonce: {{voit.id}}</p>
+      </article>
+    </div>
+  </section>
+  <!-- Fin section annonce -->
 
 
 

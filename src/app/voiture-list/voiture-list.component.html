@@ -1,9 +1,15 @@
 <div class="container">
-  <h1 class="text-center text-white display-4">Achetez la voiture de vos rêves</h1>
+  <!--<h1 class="text-center text-white display-4">Achetez la voiture de vos rêves</h1>-->
+  <div class="search">
   <app-voiture-search>
   </app-voiture-search>
-  <h2 class="mt-5 mb-4">Les derniers ajouts:</h2>
+  </div>
+  <h2 class="mt-5 mb-4 "><i class="far fa-lightbulb"></i> Les derniers ajouts:</h2>
   <div class="row">
-    <app-voiture *ngFor="let v of voitures" [voit]="v" class="col-md-6"></app-voiture>
+    <app-voiture *ngFor="let v of voitures | paginate: {itemsPerPage: 8, currentPage: p }" [voit]="v" class="col-md-6"></app-voiture>
+
+  </div>
+  <div class="text-center mt-4">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
   </div>
 </div>

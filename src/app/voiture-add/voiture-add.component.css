@@ -1,0 +1,13 @@
+.titleAd{
+
+  display: inline-block;
+  background-color: white;
+
+}
+
+.title{
+  display: block;
+  text-align: center;
+  margin-top: -20px;
+  margin-bottom: 80px;
+}

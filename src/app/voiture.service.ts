@@ -9,6 +9,7 @@ import { Voiture } from './model/voiture.model';
 export class VoitureService {
   voiture!: Voiture[];
 
+
   link = '';
   constructor(private http: HttpClient) { }
     findAll(): Observable<Voiture[]> {
@@ -19,19 +20,29 @@ export class VoitureService {
     this.link = 'http://127.0.0.1:8000/ad';
     return this.http.get<Voiture>(this.link + '/' + id);
   }
-  /*
 
-     add(voiture: Voiture): Observable<Voiture>{
-      return this.http.post<Voiture>(this.url, voiture);
-    }
+  getBrands(): Observable<any>{
+    this.link = 'http://127.0.0.1:8000/api/brand';
+    return this.http.get<any>(this.link);
+  }
 
-    findById(id: number): Observable<Voiture> {
-      return this.http.get<Voiture>(`${this.url}/${id}`);
-    }
+  getFuels(): Observable<any>{
+    this.link = 'http://127.0.0.1:8000/api/fuel';
+    return this.http.get<any>(this.link);
+  }
 
+  getModelsByBrand(id: number): Observable<any>
+  {
+    this.link = 'http://127.0.0.1:8000/api/model';
+    return this.http.get<any>(this.link + '/' + id);
+  }
 
-     delete(id: number): Observable<Voiture> {
-      return this.http.delete<Voiture>
-      (`${this.url}/${id}`);
-     }*/
+  addAnnonce(voiture: any): Observable<any>{
+    return this.http.post<any>('http://127.0.0.1:8000/ad/new', voiture);
+  }
+
+  getAnnoncesByUser(): Observable<Voiture[]>{
+    const headers = {Authorization: 'Bearer ' + sessionStorage.getItem('token')};
+    return this.http.get<Voiture[]>('http://127.0.0.1:8000/ad/allByUser', {headers});
+  }
 }

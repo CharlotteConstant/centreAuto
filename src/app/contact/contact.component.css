@@ -1,0 +1,22 @@
+div .logo {
+width: 30%;
+
+}
+
+.card-body {
+  border: 2px solid rgb(10, 0, 34);
+  color: rgb(10, 0, 34);
+  border-radius: 20px;
+
+}
+
+.card-body a {
+  color: rgb(10, 0, 34);
+  text-decoration: underline;
+  margin-left: 10px;
+}
+
+.lodevie {
+width: 120px;
+}
+
