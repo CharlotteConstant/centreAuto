@@ -47,10 +47,7 @@ options3: Options = {
   };*/
 
 
-  changeGetModels(): any {
-    this.voitureService.getModelsByBrand(this.selectBrand).subscribe(models => this.models = models);
-    console.log(this.models);
-  }
+
 
 constructor(private fb: FormBuilder, private router: Router, private voitureService: VoitureService) {
   this.voitureform = this.fb.group({
@@ -60,16 +57,19 @@ constructor(private fb: FormBuilder, private router: Router, private voitureServ
   });
 
 
-  this.voitureService.getBrands().subscribe(brands => { this.brands = brands; });
-  console.log(this.brands);
-  this.voitureService.getFuels().subscribe( fuels => { this.fuels = fuels; });
+
 }
 
   ngOnInit(): void {
-
+    this.voitureService.getBrands().subscribe(brands => { this.brands = brands; });
+    console.log(this.brands);
+    this.voitureService.getFuels().subscribe( fuels => { this.fuels = fuels; });
   }
 
-
+  changeGetModels(): any {
+    this.voitureService.getModelsByBrand(this.selectBrand).subscribe(models => this.models = models);
+    console.log(this.models);
+  }
 
 
 
