@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
       this.authService.login(formInfo).subscribe((data: any) => {
         this.authService.setTokenInStorage(data.token);
         const tokenDecoded: any = jwtDecode(data.token);
+        console.log(tokenDecoded);
         this.authService.setUsernameInStorage(tokenDecoded.username);
         window.location.replace('/myprofile');
         this.router.navigate(['/myprofile']);

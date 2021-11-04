@@ -16,12 +16,15 @@ import {ProfileManageMyaccountComponent} from './profile-manage-myaccount/profil
 import {ProfileManageMyadComponent} from './profile-manage-myad/profile-manage-myad.component';
 import {ProfileManageMygarageComponent} from './profile-manage-mygarage/profile-manage-mygarage.component';
 import {GarageAddComponent} from './garage-add/garage-add.component';
+import {GarageEditComponent} from './garage-edit/garage-edit.component';
+import {VoitureEditComponent} from './voiture-edit/voiture-edit.component';
 
 const routes: Routes = [
   {path: 'home', component: VoitureListComponent},
   {path: 'voiture', component: VoitureListComponent},
-
   {path: 'voiture/add', component: VoitureAddComponent},
+  {path: 'myprofile/garage/edit/:id', component: GarageEditComponent},
+  {path: 'myprofile/ad/edit/:id', component: VoitureEditComponent},
   {path: 'myprofile/garages/add', component: GarageAddComponent},
   {path: 'login', component: LoginComponent},
   {path: 'faq', component: FaqComponent},

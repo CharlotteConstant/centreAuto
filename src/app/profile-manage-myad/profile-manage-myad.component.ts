@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {VoitureService} from '../voiture.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-profile-manage-myad',
@@ -8,14 +9,18 @@ import {VoitureService} from '../voiture.service';
 })
 export class ProfileManageMyadComponent implements OnInit {
 
-  constructor(private voitureService: VoitureService ) { }
+  constructor(private voitureService: VoitureService, private route: ActivatedRoute ) { }
 
-  voiture: any;
+  annonce: any;
+
+  delete(id: number){
+    this.voitureService.delete(id).subscribe(r => location.reload() );
+  }
 
   ngOnInit(): void {
     this.voitureService.getAnnoncesByUser().subscribe((data: any) => {
-      this.voiture = data;
-      console.log(this.voiture);
+      this.annonce = data;
+      console.log(this.annonce);
     });
   }
 

@@ -1,6 +1,6 @@
 import { Options } from '@angular-slider/ngx-slider';
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { VoitureService } from '../voiture.service';
@@ -19,62 +19,61 @@ export class VoitureSearchComponent implements OnInit {
   fuels: any = [];
   formSubmitted = false;
 
-voitureform !: FormGroup;
+voitureSearchForm!: FormGroup;
 
-/*
-minValue: number = 1950;
-maxValue: number = 2021;
-options: Options = {
+
+optionsYear: Options = {
+
     floor: 1950,
     ceil: 2021,
-    step: 0
+    step: 1
   };
 
-minValue2: number = 0;
-maxValue2: number = 300000;
-options2: Options = {
+optionsKilometers: Options = {
+
     floor: 0,
     ceil: 300000,
     step: 20000
   };
 
-minValue3: number = 0;
-maxValue3: number = 100000;
-options3: Options = {
+optionsPrice: Options = {
+
     floor: 0,
     ceil: 100000,
     step: 10000
-  };*/
+  };
 
 
-
-
-constructor(private fb: FormBuilder, private router: Router, private voitureService: VoitureService) {
-  this.voitureform = this.fb.group({
-    brand: [''],
-    model: [''],
-    fuel: ['']
-  });
-
-
+constructor(private fb: FormBuilder, private route: Router, private voitureService: VoitureService) {
 
 }
 
-  ngOnInit(): void {
-    this.voitureService.getBrands().subscribe(brands => { this.brands = brands; });
-    console.log(this.brands);
-    this.voitureService.getFuels().subscribe( fuels => { this.fuels = fuels; });
-  }
-
   changeGetModels(): any {
-    this.voitureService.getModelsByBrand(this.selectBrand).subscribe(models => this.models = models);
-    console.log(this.models);
+  console.log(this.selectBrand);
+    this.voitureService.getModelsByBrand(this.selectBrand).subscribe(models => {this.models = models;
+      console.log(this.models);});
+
   }
 
 
+  ngOnInit(): void {
+    this.voitureSearchForm = this.fb.group({
+      brand: [''],
+      model: [''],
+      fuel: [''],
+      year: new FormControl([1950, 2021]),
+      kilometers: new FormControl([0, 300000]),
+      price: new FormControl([0, 100000])
+    });
+    this.voitureService.getBrands().subscribe(brands => { this.brands = brands; });
+    this.voitureService.getFuels().subscribe( fuels => { this.fuels = fuels; });
+
+  }
 
 
-
-
-
+  submitForm(): void{
+    const formInfoSearch = this.voitureSearchForm.value;
+    console.log(this.voitureSearchForm.value);
+    this.voitureService.getAdBySelection(formInfoSearch).subscribe( data => this.route.navigate(['/home']));
+  }
 }

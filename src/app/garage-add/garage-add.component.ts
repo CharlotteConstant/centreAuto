@@ -29,8 +29,7 @@ export class GarageAddComponent implements OnInit {
 
     if (this.addGarageForm.valid){
       console.log(this.addGarageForm.value);
-      this.garageService.addGarage(this.addGarageForm.value).subscribe( (data: any) => {
-        console.log(data);
+      this.garageService.addGarage(this.addGarageForm.value).subscribe( (data: any) => {this.router.navigate(['/myprofile/garages']);
         this.formSubmitted = false;
       });
   }

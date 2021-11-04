@@ -5,14 +5,16 @@
 <div class="mb-5 mt-4">
     <a [routerLink]="['/myprofile/garages/add']" class="button text-center rounded-pill pt-1">Ajouter un garage</a>
 
+
 </div>
-    <p>Voici mes garages</p>
+    <p>Voici mes garages:</p>
 <div *ngFor="let garage of garage">
   <p>Nom du garage: {{garage.name}}</p>
   <p>Numéro de téléphone: {{garage.phone}}</p>
   <p>Addresse:{{garage.addressRue}}</p>
   <p>{{garage.addressCp}} - {{garage.addressCity}}</p>
   <button class="button-red" (click)="delete(garage.id)">Supprimer ce garage</button>
+  <a [routerLink]="['/myprofile/garage/edit', garage.id]" class="button text-center rounded-pill pt-1">Editer ce garage</a>
   <hr>
 </div>
 

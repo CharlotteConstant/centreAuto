@@ -27,6 +27,8 @@ import { ProfileManageMyadComponent } from './profile-manage-myad/profile-manage
 import { ProfileManageMygarageComponent } from './profile-manage-mygarage/profile-manage-mygarage.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { GarageAddComponent } from './garage-add/garage-add.component';
+import { GarageEditComponent } from './garage-edit/garage-edit.component';
+import { VoitureEditComponent } from './voiture-edit/voiture-edit.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { GarageAddComponent } from './garage-add/garage-add.component';
     ProfileManageMyadComponent,
     ProfileManageMygarageComponent,
     GarageAddComponent,
+    GarageEditComponent,
+    VoitureEditComponent,
 
   ],
     imports: [

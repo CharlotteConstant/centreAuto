@@ -5,5 +5,5 @@ export class Garage {
     public addressRue: string,
     public addressCp: string,
     public addressCity: string,
-    public user: any) { }
+    public user: number) { }
 }

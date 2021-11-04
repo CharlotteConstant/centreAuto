@@ -14,19 +14,20 @@
 
   <section id="annonce">
     <div class="d-flex">
-      <aside class="container">
-        <ngb-carousel>
-          <ng-template ngbSlide>
+      <aside class="container" >
+        <ngb-carousel *ngFor="let voit of voit.photos;">
+          <ng-template ngbSlide *ngIf="voit.photos">
             <div class="picsum-img-wrapper">
               <img src="{{voit.photos[0].path}}" class="d-block w-100" alt="Random first slide">
             </div>
           </ng-template>
-          <ng-template ngbSlide>
+
+          <ng-template ngbSlide *ngIf="voit.photos == 1">
             <div class="picsum-img-wrapper">
               <img src="{{voit.photos[1].path}}" class="d-block w-100" alt="Random second slide">
             </div>
           </ng-template>
-          <ng-template ngbSlide>
+          <ng-template ngbSlide *ngIf="voit.photos == 2">
             <div class="picsum-img-wrapper">
               <img src="{{voit.photos[2].path}}" class="d-block w-100" alt="Random second slide">
             </div>
@@ -34,6 +35,7 @@
         </ngb-carousel>
 
       </aside>
+
       <article class="container">
         <h2 class="text-center fw-bold pb-3">{{voit.title}}</h2>
         <div class="bloc border mt-5">

@@ -21,6 +21,11 @@ export class VoitureService {
     return this.http.get<Voiture>(this.link + '/' + id);
   }
 
+  editAd(id: number, voiture: any): Observable<Voiture[]> {
+    const headers = {Authorization: 'Bearer ' + sessionStorage.getItem('token')};
+    return this.http.patch<Voiture[]>('http://127.0.0.1:8000/ad/edit/' + id, voiture, {headers});
+  }
+
   getBrands(): Observable<any>{
     this.link = 'http://127.0.0.1:8000/api/brand';
     return this.http.get<any>(this.link);
@@ -33,16 +38,29 @@ export class VoitureService {
 
   getModelsByBrand(id: number): Observable<any>
   {
-    this.link = 'http://127.0.0.1:8000/api/model';
-    return this.http.get<any>(this.link + '/' + id);
+    this.link = 'http://127.0.0.1:8000/api/model/' + id;
+    return this.http.get<any>(this.link);
+  }
+
+  getAdBySelection(value: Voiture): Observable<any[]>{
+    this.link = 'http://127.0.0.1:8000/ad/search';
+    return this.http.post<any[]>(this.link, value);
   }
 
   addAnnonce(voiture: any): Observable<any>{
-    return this.http.post<any>('http://127.0.0.1:8000/ad/new', voiture);
+    const headers = {Authorization: 'Bearer ' + sessionStorage.getItem('token')};
+    const username = sessionStorage.getItem('username');
+    return this.http.post<any>('http://127.0.0.1:8000/ad/new/' + username, voiture, {headers});
   }
 
-  getAnnoncesByUser(): Observable<Voiture[]>{
+  getAnnoncesByUser(): Observable<any>{
     const headers = {Authorization: 'Bearer ' + sessionStorage.getItem('token')};
-    return this.http.get<Voiture[]>('http://127.0.0.1:8000/ad/allByUser', {headers});
+    const username = sessionStorage.getItem('username');
+
+    return this.http.get<any>('http://127.0.0.1:8000/ads/allByUser' + '/' + username, {headers});
+  }
+
+  delete(id: number): Observable<any>{
+    return this.http.delete('http://127.0.0.1:8000/ad/delete/' + id);
   }
 }

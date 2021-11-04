@@ -6,13 +6,11 @@
   <div class=" row text-center" >
 
     <div class="col-md-4 p-5">
-      <select id="brand" name="brand" class="form-control" (change)="changeGetModels()" [(ngModel)]="selectBrand">
+      <select id="brand" name="brand" [(ngModel)]="selectBrand" (change)="changeGetModels()" class="form-control">
         <option *ngFor="let brand of brands" value="{{brand['id']}}">{{brand['name']}}</option>
       </select>
     </div>
-
-
-  <form class="row" [formGroup]="voitureform">
+  <form class="row" [formGroup]="voitureSearchForm" (ngSubmit)="submitForm()">
 
       <div class="col-md-4 p-5">
         <select id="model" name="model" formControlName="model" class="form-control">
@@ -26,38 +24,38 @@
           <option *ngFor="let fuel of fuels" value="{{fuel['id']}}">{{fuel["name"]}}</option>
         </select>
       </div>
-<!--
+
       <div class="col-md-4 p-4">
-        <label for="year" class="form-label text-white">Année : </label>
+        <label class="form-label text-white">Année : </label>
         <div class="custom-slider">
-          <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ngx-slider>
+          <ngx-slider [options]="optionsYear" formControlName="year"></ngx-slider>
         </div>
       </div>
       <div class="col-md-4 p-4">
-        <label for="kilometers" class="form-label text-white">Kilomètres : </label>
+        <label class="form-label text-white">Kilomètres : </label>
         <div class="custom-slider">
-          <ngx-slider [(value)]="minValue2" [(highValue)]="maxValue2" [options]="options2" #km></ngx-slider>
+          <ngx-slider [options]="optionsKilometers" formControlName="kilometers"></ngx-slider>
         </div>
       </div>
-      <div class="col-md-4 p-4">
-        <label for="price" class="form-label text-white">Prix : </label>
+    <div class="col-md-4 p-4">
+        <label class="form-label text-white">Prix : </label>
         <div class="custom-slider">
-          <ngx-slider [(value)]="minValue3" [(highValue)]="maxValue3" [options]="options3" #prix></ngx-slider>
+          <ngx-slider [options]="optionsPrice" formControlName="price" #price></ngx-slider>
         </div>
-      </div>-->
+      </div>
       <!--
       <li class="col-md-4 p-4">
         <label for="customRange2" class="form-label text-white">Année : </label>
         <input type="range" class="form-range" min="1990" max="2021" id="customRange2">
       </li>-->
-      <!--
+<!--
       <li class="col-md-4 p-4">
         <label for="customRange2" class="form-label text-white">Kilomètres :</label>
-        <input type="range" class="form-range" min="1990" max="2021" id="customRange2">
+        <input type="range" class="form-range" id="customRange2">
       </li>
       <li class="col-md-4 p-4">
         <label for="customRange2" class="form-label text-white">Prix :</label>
-        <input type="range" class="form-range" min="1990" max="2021" id="customRange2">
+        <input type="range" class="form-range" id="customRange2">
       </li>-->
       <div class="col-md-12 pt-5 d-flex justify-content-center">
         <button type="submit" value="Rechercher" class="button-red"><a class="text-white"

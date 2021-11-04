@@ -17,6 +17,7 @@ export class VoitureDetailComponent implements OnInit {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     console.log(id);
     this.voitureService.findOneById(id).subscribe( data => {this.voit = data;
+      console.log(this.voit.photos[0]);
     });
 
   }

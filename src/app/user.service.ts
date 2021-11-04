@@ -27,9 +27,9 @@ export class UserService {
     return this.http.get<any>('http://127.0.0.1:8000/api/user/show', {headers});
   }
 
-  getEdit(id: number): any{
+  getEdit(id: number, user: any): any{
     const headers = {Authorization: 'Bearer ' + sessionStorage.getItem('token')};
-    return this.http.get<any>('http://127.0.0.1:8000/api/user/show' + id, {headers});
+    return this.http.patch<any>('http://127.0.0.1:8000/user/edit/' + id, user, {headers});
   }
 
   deleteUser(id: number){

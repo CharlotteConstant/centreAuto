@@ -6,9 +6,13 @@
 
   <li><a [routerLink]="['/voiture/add']" class="button-red text-center rounded-pill pt-1">Ajouter une voiture</a></li>
 
-  <p>Voici mes annonces</p>
-  <div *ngFor="let voiture of voiture">
-    <p>titre de l'annonce: {{voiture.title}}</p>
+  <p class="mb-3">Voici mes annonces:</p>
+  <div *ngFor="let annonce of annonce">
+    <p class="text-center">annonce numéro: {{annonce.id}}</p>
+    <p class="text-center">titre de l'annonce: {{annonce.title}}</p>
+    <button class="button-red mt-3" (click)="delete(annonce.id)">Supprimer cette annonce</button>
+    <a [routerLink]="['/myprofile/ad/edit', annonce.id]" class="button text-center rounded-pill pt-1">Editer cette annonce</a>
+
     <hr>
   </div>
 </div>

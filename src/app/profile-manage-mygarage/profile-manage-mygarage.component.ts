@@ -15,6 +15,8 @@ export class ProfileManageMygarageComponent implements OnInit {
 
   garage: any;
 
+  garageAd: any;
+
   delete(id: number){
     this.garageService.delete(id).subscribe(r => location.reload() );
   }
@@ -25,6 +27,8 @@ export class ProfileManageMygarageComponent implements OnInit {
       this.garage = data;
 console.log(this.garage);
     });
+
+
 
   }
 }

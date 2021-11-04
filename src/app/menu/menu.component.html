@@ -7,7 +7,7 @@
       <li><a [routerLink]="['/voiture/add']" class="button-red text-center rounded-pill pt-1">Ajouter une voiture</a></li>
       <li><a [routerLink]="['/login']" [ngStyle]="{'display': loggedIn? 'none':'block'}" class="button-red fs-3 text-center rounded-pill pt-1">Connexion</a></li>
       <li><a [ngStyle]="{'display': loggedIn? 'block':'none'}"> <button (click)="logout()" class="button-red fs-3 text-center rounded-pill pt-1">Deconnexion</button></a></li>
-      <li><a [routerLink]="['/myprofile']" class="button-red fs-3 text-center rounded-pill pt-1">mon profil</a></li>
+      <li><a [routerLink]="['/myprofile']" [ngStyle]="{'display': loggedIn? 'block':'none'}" class="button-red fs-3 text-center rounded-pill pt-1">mon profil</a></li>
     </ul>
     <!--
     "
